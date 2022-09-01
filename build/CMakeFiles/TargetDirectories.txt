@@ -1,0 +1,6 @@
+/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/build/CMakeFiles/kendryte-freertos-project.dir
+/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/build/CMakeFiles/edit_cache.dir
+/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/build/CMakeFiles/rebuild_cache.dir
+/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/build/kendryte-standalone-sdk/lib/CMakeFiles/kendryte.dir
+/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/build/kendryte-standalone-sdk/lib/CMakeFiles/edit_cache.dir
+/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/build/kendryte-standalone-sdk/lib/CMakeFiles/rebuild_cache.dir

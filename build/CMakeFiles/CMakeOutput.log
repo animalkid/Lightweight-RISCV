@@ -1,0 +1,201 @@
+The target system is: Generic -  - 
+The host system is: Linux - 5.15.22-1-lts - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /opt/riscv-toolchain/bin/riscv64-unknown-elf-gcc 
+Build flags: -mcmodel=medany;-mabi=lp64f;-march=rv64imafc;-fno-common;-ffunction-sections;-fdata-sections;-fstrict-volatile-bitfields;-fno-zero-initialized-in-bss;-ffast-math;-fno-math-errno;-fsingle-precision-constant
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/build/CMakeFiles/3.22.2/CompilerIdC/a.out"
+
+Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
+riscv64-unknown-elf-gcc (GCC) 8.2.0
+Copyright (C) 2018 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_d778d/fast && /usr/bin/make  -f CMakeFiles/cmTC_d778d.dir/build.make CMakeFiles/cmTC_d778d.dir/build
+make[1]: Entering directory '/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d778d.dir/CMakeCCompilerABI.c.obj
+/opt/riscv-toolchain/bin/riscv64-unknown-elf-gcc   -mcmodel=medany -mabi=lp64f -march=rv64imafc -fno-common -ffunction-sections -fdata-sections -fstrict-volatile-bitfields -fno-zero-initialized-in-bss -ffast-math -fno-math-errno -fsingle-precision-constant    -v -o CMakeFiles/cmTC_d778d.dir/CMakeCCompilerABI.c.obj -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/opt/riscv-toolchain/bin/riscv64-unknown-elf-gcc
+Target: riscv64-unknown-elf
+Configured with: /mnt/d/Work/Repository/maix-toolchain/riscv-gcc/configure --target=riscv64-unknown-elf --prefix=/opt/kendryte-toolchain --disable-shared --enable-threads=posix --enable-languages=c,c++ --enable-libatomic --with-system-zlib --enable-tls --with-newlib --with-sysroot=/opt/kendryte-toolchain/riscv64-unknown-elf --with-native-system-header-dir=/include --disable-libmudflap --disable-libssp --disable-libquadmath --disable-libgomp --disable-nls --src=.././riscv-gcc --enable-checking=yes --disable-multilib --with-abi=lp64f --with-arch=rv64imafc 'CFLAGS_FOR_TARGET=-Os -ffunction-sections -fdata-sections  -mcmodel=medany' 'CXXFLAGS_FOR_TARGET=-Os -ffunction-sections -fdata-sections -mcmodel=medany'
+Thread model: posix
+gcc version 8.2.0 (GCC) 
+COLLECT_GCC_OPTIONS='-mcmodel=medany' '-mabi=lp64f' '-march=rv64imafc' '-fno-common' '-ffunction-sections' '-fdata-sections' '-fstrict-volatile-bitfields' '-fno-zero-initialized-in-bss' '-ffast-math' '-fno-math-errno' '-fsingle-precision-constant' '-v' '-o' 'CMakeFiles/cmTC_d778d.dir/CMakeCCompilerABI.c.obj' '-c'
+ /opt/riscv-toolchain/bin/../libexec/gcc/riscv64-unknown-elf/8.2.0/cc1 -quiet -v -iprefix /opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/ -isysroot /opt/riscv-toolchain/bin/../riscv64-unknown-elf /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mcmodel=medany -mabi=lp64f -march=rv64imafc -auxbase-strip CMakeFiles/cmTC_d778d.dir/CMakeCCompilerABI.c.obj -version -fno-common -ffunction-sections -fdata-sections -fstrict-volatile-bitfields -fno-zero-initialized-in-bss -ffast-math -fno-math-errno -fsingle-precision-constant -o /tmp/cc4oYtUX.s
+GNU C17 (GCC) version 8.2.0 (riscv64-unknown-elf)
+	compiled by GNU C version 8.2.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP
+
+warning: GMP header version 6.1.2 differs from library version 6.2.1.
+warning: MPFR header version 4.0.1 differs from library version 4.1.0-p13.
+warning: MPC header version 1.1.0 differs from library version 1.2.1.
+GGC heuristics: --param ggc-min-expand=30 --param ggc-min-heapsize=4096
+ignoring duplicate directory "/opt/riscv-toolchain/bin/../lib/gcc/../../lib/gcc/riscv64-unknown-elf/8.2.0/include"
+ignoring nonexistent directory "/opt/riscv-toolchain/bin/../riscv64-unknown-elf/usr/local/include"
+ignoring duplicate directory "/opt/riscv-toolchain/bin/../lib/gcc/../../lib/gcc/riscv64-unknown-elf/8.2.0/include-fixed"
+ignoring duplicate directory "/opt/riscv-toolchain/bin/../lib/gcc/../../lib/gcc/riscv64-unknown-elf/8.2.0/../../../../riscv64-unknown-elf/include"
+ignoring duplicate directory "/opt/riscv-toolchain/bin/../riscv64-unknown-elf/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/include
+ /opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/include-fixed
+ /opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/../../../../riscv64-unknown-elf/include
+End of search list.
+GNU C17 (GCC) version 8.2.0 (riscv64-unknown-elf)
+	compiled by GNU C version 8.2.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP
+
+warning: GMP header version 6.1.2 differs from library version 6.2.1.
+warning: MPFR header version 4.0.1 differs from library version 4.1.0-p13.
+warning: MPC header version 1.1.0 differs from library version 1.2.1.
+GGC heuristics: --param ggc-min-expand=30 --param ggc-min-heapsize=4096
+Compiler executable checksum: 24f9d25c4e5ab34e4466344b27a1d9d8
+COLLECT_GCC_OPTIONS='-mcmodel=medany' '-mabi=lp64f' '-march=rv64imafc' '-fno-common' '-ffunction-sections' '-fdata-sections' '-fstrict-volatile-bitfields' '-fno-zero-initialized-in-bss' '-ffast-math' '-fno-math-errno' '-fsingle-precision-constant' '-v' '-o' 'CMakeFiles/cmTC_d778d.dir/CMakeCCompilerABI.c.obj' '-c'
+ /opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/../../../../riscv64-unknown-elf/bin/as -v --traditional-format -march=rv64imafc -mabi=lp64f -o CMakeFiles/cmTC_d778d.dir/CMakeCCompilerABI.c.obj /tmp/cc4oYtUX.s
+GNU assembler version 2.31.51 (riscv64-unknown-elf) using BFD version (GNU Binutils) 2.31.51
+COMPILER_PATH=/opt/riscv-toolchain/bin/../libexec/gcc/riscv64-unknown-elf/8.2.0/:/opt/riscv-toolchain/bin/../libexec/gcc/:/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/../../../../riscv64-unknown-elf/bin/
+LIBRARY_PATH=/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/:/opt/riscv-toolchain/bin/../lib/gcc/:/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/../../../../riscv64-unknown-elf/lib/:/opt/riscv-toolchain/bin/../riscv64-unknown-elf/lib/
+COLLECT_GCC_OPTIONS='-mcmodel=medany' '-mabi=lp64f' '-march=rv64imafc' '-fno-common' '-ffunction-sections' '-fdata-sections' '-fstrict-volatile-bitfields' '-fno-zero-initialized-in-bss' '-ffast-math' '-fno-math-errno' '-fsingle-precision-constant' '-v' '-o' 'CMakeFiles/cmTC_d778d.dir/CMakeCCompilerABI.c.obj' '-c'
+Linking C executable cmTC_d778d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d778d.dir/link.txt --verbose=1
+/opt/riscv-toolchain/bin/riscv64-unknown-elf-gcc -mcmodel=medany -mabi=lp64f -march=rv64imafc -fno-common -ffunction-sections -fdata-sections -fstrict-volatile-bitfields -fno-zero-initialized-in-bss -ffast-math -fno-math-errno -fsingle-precision-constant  -nostartfiles -static -Wl,--gc-sections -Wl,-static -Wl,-EL -Wl,--no-relax -v CMakeFiles/cmTC_d778d.dir/CMakeCCompilerABI.c.obj -o cmTC_d778d 
+Using built-in specs.
+COLLECT_GCC=/opt/riscv-toolchain/bin/riscv64-unknown-elf-gcc
+COLLECT_LTO_WRAPPER=/opt/riscv-toolchain/bin/../libexec/gcc/riscv64-unknown-elf/8.2.0/lto-wrapper
+Target: riscv64-unknown-elf
+Configured with: /mnt/d/Work/Repository/maix-toolchain/riscv-gcc/configure --target=riscv64-unknown-elf --prefix=/opt/kendryte-toolchain --disable-shared --enable-threads=posix --enable-languages=c,c++ --enable-libatomic --with-system-zlib --enable-tls --with-newlib --with-sysroot=/opt/kendryte-toolchain/riscv64-unknown-elf --with-native-system-header-dir=/include --disable-libmudflap --disable-libssp --disable-libquadmath --disable-libgomp --disable-nls --src=.././riscv-gcc --enable-checking=yes --disable-multilib --with-abi=lp64f --with-arch=rv64imafc 'CFLAGS_FOR_TARGET=-Os -ffunction-sections -fdata-sections  -mcmodel=medany' 'CXXFLAGS_FOR_TARGET=-Os -ffunction-sections -fdata-sections -mcmodel=medany'
+Thread model: posix
+gcc version 8.2.0 (GCC) 
+COMPILER_PATH=/opt/riscv-toolchain/bin/../libexec/gcc/riscv64-unknown-elf/8.2.0/:/opt/riscv-toolchain/bin/../libexec/gcc/:/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/../../../../riscv64-unknown-elf/bin/
+LIBRARY_PATH=/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/:/opt/riscv-toolchain/bin/../lib/gcc/:/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/../../../../riscv64-unknown-elf/lib/:/opt/riscv-toolchain/bin/../riscv64-unknown-elf/lib/
+COLLECT_GCC_OPTIONS='-mcmodel=medany' '-mabi=lp64f' '-march=rv64imafc' '-fno-common' '-ffunction-sections' '-fdata-sections' '-fstrict-volatile-bitfields' '-fno-zero-initialized-in-bss' '-ffast-math' '-fno-math-errno' '-fsingle-precision-constant' '-nostartfiles' '-static' '-v' '-o' 'cmTC_d778d'
+ /opt/riscv-toolchain/bin/../libexec/gcc/riscv64-unknown-elf/8.2.0/collect2 -plugin /opt/riscv-toolchain/bin/../libexec/gcc/riscv64-unknown-elf/8.2.0/liblto_plugin.so -plugin-opt=/opt/riscv-toolchain/bin/../libexec/gcc/riscv64-unknown-elf/8.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccvsQG82.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgloss -plugin-opt=-pass-through=-lgcc --sysroot=/opt/riscv-toolchain/bin/../riscv64-unknown-elf -melf64lriscv -o cmTC_d778d -L/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0 -L/opt/riscv-toolchain/bin/../lib/gcc -L/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/../../../../riscv64-unknown-elf/lib -L/opt/riscv-toolchain/bin/../riscv64-unknown-elf/lib --gc-sections -static -EL --no-relax CMakeFiles/cmTC_d778d.dir/CMakeCCompilerABI.c.obj -lgcc --start-group -lc -lgloss --end-group -lgcc
+/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/../../../../riscv64-unknown-elf/bin/ld: warning: cannot find entry symbol _start; not setting start address
+COLLECT_GCC_OPTIONS='-mcmodel=medany' '-mabi=lp64f' '-march=rv64imafc' '-fno-common' '-ffunction-sections' '-fdata-sections' '-fstrict-volatile-bitfields' '-fno-zero-initialized-in-bss' '-ffast-math' '-fno-math-errno' '-fsingle-precision-constant' '-nostartfiles' '-static' '-v' '-o' 'cmTC_d778d'
+make[1]: Leaving directory '/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/build/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/include]
+    add: [/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/include-fixed]
+    add: [/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/../../../../riscv64-unknown-elf/include]
+  end of search list found
+  collapse include dir [/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/include] ==> [/opt/riscv-toolchain/lib/gcc/riscv64-unknown-elf/8.2.0/include]
+  collapse include dir [/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/include-fixed] ==> [/opt/riscv-toolchain/lib/gcc/riscv64-unknown-elf/8.2.0/include-fixed]
+  collapse include dir [/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/../../../../riscv64-unknown-elf/include] ==> [/opt/riscv-toolchain/riscv64-unknown-elf/include]
+  implicit include dirs: [/opt/riscv-toolchain/lib/gcc/riscv64-unknown-elf/8.2.0/include;/opt/riscv-toolchain/lib/gcc/riscv64-unknown-elf/8.2.0/include-fixed;/opt/riscv-toolchain/riscv64-unknown-elf/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(riscv64-unknown-elf-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make -f Makefile cmTC_d778d/fast && /usr/bin/make  -f CMakeFiles/cmTC_d778d.dir/build.make CMakeFiles/cmTC_d778d.dir/build]
+  ignore line: [make[1]: Entering directory '/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_d778d.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [/opt/riscv-toolchain/bin/riscv64-unknown-elf-gcc   -mcmodel=medany -mabi=lp64f -march=rv64imafc -fno-common -ffunction-sections -fdata-sections -fstrict-volatile-bitfields -fno-zero-initialized-in-bss -ffast-math -fno-math-errno -fsingle-precision-constant    -v -o CMakeFiles/cmTC_d778d.dir/CMakeCCompilerABI.c.obj -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/opt/riscv-toolchain/bin/riscv64-unknown-elf-gcc]
+  ignore line: [Target: riscv64-unknown-elf]
+  ignore line: [Configured with: /mnt/d/Work/Repository/maix-toolchain/riscv-gcc/configure --target=riscv64-unknown-elf --prefix=/opt/kendryte-toolchain --disable-shared --enable-threads=posix --enable-languages=c c++ --enable-libatomic --with-system-zlib --enable-tls --with-newlib --with-sysroot=/opt/kendryte-toolchain/riscv64-unknown-elf --with-native-system-header-dir=/include --disable-libmudflap --disable-libssp --disable-libquadmath --disable-libgomp --disable-nls --src=.././riscv-gcc --enable-checking=yes --disable-multilib --with-abi=lp64f --with-arch=rv64imafc 'CFLAGS_FOR_TARGET=-Os -ffunction-sections -fdata-sections  -mcmodel=medany' 'CXXFLAGS_FOR_TARGET=-Os -ffunction-sections -fdata-sections -mcmodel=medany']
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 8.2.0 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-mcmodel=medany' '-mabi=lp64f' '-march=rv64imafc' '-fno-common' '-ffunction-sections' '-fdata-sections' '-fstrict-volatile-bitfields' '-fno-zero-initialized-in-bss' '-ffast-math' '-fno-math-errno' '-fsingle-precision-constant' '-v' '-o' 'CMakeFiles/cmTC_d778d.dir/CMakeCCompilerABI.c.obj' '-c']
+  ignore line: [ /opt/riscv-toolchain/bin/../libexec/gcc/riscv64-unknown-elf/8.2.0/cc1 -quiet -v -iprefix /opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/ -isysroot /opt/riscv-toolchain/bin/../riscv64-unknown-elf /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mcmodel=medany -mabi=lp64f -march=rv64imafc -auxbase-strip CMakeFiles/cmTC_d778d.dir/CMakeCCompilerABI.c.obj -version -fno-common -ffunction-sections -fdata-sections -fstrict-volatile-bitfields -fno-zero-initialized-in-bss -ffast-math -fno-math-errno -fsingle-precision-constant -o /tmp/cc4oYtUX.s]
+  ignore line: [GNU C17 (GCC) version 8.2.0 (riscv64-unknown-elf)]
+  ignore line: [	compiled by GNU C version 8.2.0  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version isl-0.19-GMP]
+  ignore line: []
+  ignore line: [warning: GMP header version 6.1.2 differs from library version 6.2.1.]
+  ignore line: [warning: MPFR header version 4.0.1 differs from library version 4.1.0-p13.]
+  ignore line: [warning: MPC header version 1.1.0 differs from library version 1.2.1.]
+  ignore line: [GGC heuristics: --param ggc-min-expand=30 --param ggc-min-heapsize=4096]
+  ignore line: [ignoring duplicate directory "/opt/riscv-toolchain/bin/../lib/gcc/../../lib/gcc/riscv64-unknown-elf/8.2.0/include"]
+  ignore line: [ignoring nonexistent directory "/opt/riscv-toolchain/bin/../riscv64-unknown-elf/usr/local/include"]
+  ignore line: [ignoring duplicate directory "/opt/riscv-toolchain/bin/../lib/gcc/../../lib/gcc/riscv64-unknown-elf/8.2.0/include-fixed"]
+  ignore line: [ignoring duplicate directory "/opt/riscv-toolchain/bin/../lib/gcc/../../lib/gcc/riscv64-unknown-elf/8.2.0/../../../../riscv64-unknown-elf/include"]
+  ignore line: [ignoring duplicate directory "/opt/riscv-toolchain/bin/../riscv64-unknown-elf/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/include]
+  ignore line: [ /opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/include-fixed]
+  ignore line: [ /opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/../../../../riscv64-unknown-elf/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C17 (GCC) version 8.2.0 (riscv64-unknown-elf)]
+  ignore line: [	compiled by GNU C version 8.2.0  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version isl-0.19-GMP]
+  ignore line: []
+  ignore line: [warning: GMP header version 6.1.2 differs from library version 6.2.1.]
+  ignore line: [warning: MPFR header version 4.0.1 differs from library version 4.1.0-p13.]
+  ignore line: [warning: MPC header version 1.1.0 differs from library version 1.2.1.]
+  ignore line: [GGC heuristics: --param ggc-min-expand=30 --param ggc-min-heapsize=4096]
+  ignore line: [Compiler executable checksum: 24f9d25c4e5ab34e4466344b27a1d9d8]
+  ignore line: [COLLECT_GCC_OPTIONS='-mcmodel=medany' '-mabi=lp64f' '-march=rv64imafc' '-fno-common' '-ffunction-sections' '-fdata-sections' '-fstrict-volatile-bitfields' '-fno-zero-initialized-in-bss' '-ffast-math' '-fno-math-errno' '-fsingle-precision-constant' '-v' '-o' 'CMakeFiles/cmTC_d778d.dir/CMakeCCompilerABI.c.obj' '-c']
+  ignore line: [ /opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/../../../../riscv64-unknown-elf/bin/as -v --traditional-format -march=rv64imafc -mabi=lp64f -o CMakeFiles/cmTC_d778d.dir/CMakeCCompilerABI.c.obj /tmp/cc4oYtUX.s]
+  ignore line: [GNU assembler version 2.31.51 (riscv64-unknown-elf) using BFD version (GNU Binutils) 2.31.51]
+  ignore line: [COMPILER_PATH=/opt/riscv-toolchain/bin/../libexec/gcc/riscv64-unknown-elf/8.2.0/:/opt/riscv-toolchain/bin/../libexec/gcc/:/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/../../../../riscv64-unknown-elf/bin/]
+  ignore line: [LIBRARY_PATH=/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/:/opt/riscv-toolchain/bin/../lib/gcc/:/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/../../../../riscv64-unknown-elf/lib/:/opt/riscv-toolchain/bin/../riscv64-unknown-elf/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-mcmodel=medany' '-mabi=lp64f' '-march=rv64imafc' '-fno-common' '-ffunction-sections' '-fdata-sections' '-fstrict-volatile-bitfields' '-fno-zero-initialized-in-bss' '-ffast-math' '-fno-math-errno' '-fsingle-precision-constant' '-v' '-o' 'CMakeFiles/cmTC_d778d.dir/CMakeCCompilerABI.c.obj' '-c']
+  ignore line: [Linking C executable cmTC_d778d]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d778d.dir/link.txt --verbose=1]
+  ignore line: [/opt/riscv-toolchain/bin/riscv64-unknown-elf-gcc -mcmodel=medany -mabi=lp64f -march=rv64imafc -fno-common -ffunction-sections -fdata-sections -fstrict-volatile-bitfields -fno-zero-initialized-in-bss -ffast-math -fno-math-errno -fsingle-precision-constant  -nostartfiles -static -Wl --gc-sections -Wl -static -Wl -EL -Wl --no-relax -v CMakeFiles/cmTC_d778d.dir/CMakeCCompilerABI.c.obj -o cmTC_d778d ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/opt/riscv-toolchain/bin/riscv64-unknown-elf-gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/opt/riscv-toolchain/bin/../libexec/gcc/riscv64-unknown-elf/8.2.0/lto-wrapper]
+  ignore line: [Target: riscv64-unknown-elf]
+  ignore line: [Configured with: /mnt/d/Work/Repository/maix-toolchain/riscv-gcc/configure --target=riscv64-unknown-elf --prefix=/opt/kendryte-toolchain --disable-shared --enable-threads=posix --enable-languages=c c++ --enable-libatomic --with-system-zlib --enable-tls --with-newlib --with-sysroot=/opt/kendryte-toolchain/riscv64-unknown-elf --with-native-system-header-dir=/include --disable-libmudflap --disable-libssp --disable-libquadmath --disable-libgomp --disable-nls --src=.././riscv-gcc --enable-checking=yes --disable-multilib --with-abi=lp64f --with-arch=rv64imafc 'CFLAGS_FOR_TARGET=-Os -ffunction-sections -fdata-sections  -mcmodel=medany' 'CXXFLAGS_FOR_TARGET=-Os -ffunction-sections -fdata-sections -mcmodel=medany']
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 8.2.0 (GCC) ]
+  ignore line: [COMPILER_PATH=/opt/riscv-toolchain/bin/../libexec/gcc/riscv64-unknown-elf/8.2.0/:/opt/riscv-toolchain/bin/../libexec/gcc/:/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/../../../../riscv64-unknown-elf/bin/]
+  ignore line: [LIBRARY_PATH=/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/:/opt/riscv-toolchain/bin/../lib/gcc/:/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/../../../../riscv64-unknown-elf/lib/:/opt/riscv-toolchain/bin/../riscv64-unknown-elf/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-mcmodel=medany' '-mabi=lp64f' '-march=rv64imafc' '-fno-common' '-ffunction-sections' '-fdata-sections' '-fstrict-volatile-bitfields' '-fno-zero-initialized-in-bss' '-ffast-math' '-fno-math-errno' '-fsingle-precision-constant' '-nostartfiles' '-static' '-v' '-o' 'cmTC_d778d']
+  link line: [ /opt/riscv-toolchain/bin/../libexec/gcc/riscv64-unknown-elf/8.2.0/collect2 -plugin /opt/riscv-toolchain/bin/../libexec/gcc/riscv64-unknown-elf/8.2.0/liblto_plugin.so -plugin-opt=/opt/riscv-toolchain/bin/../libexec/gcc/riscv64-unknown-elf/8.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccvsQG82.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgloss -plugin-opt=-pass-through=-lgcc --sysroot=/opt/riscv-toolchain/bin/../riscv64-unknown-elf -melf64lriscv -o cmTC_d778d -L/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0 -L/opt/riscv-toolchain/bin/../lib/gcc -L/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/../../../../riscv64-unknown-elf/lib -L/opt/riscv-toolchain/bin/../riscv64-unknown-elf/lib --gc-sections -static -EL --no-relax CMakeFiles/cmTC_d778d.dir/CMakeCCompilerABI.c.obj -lgcc --start-group -lc -lgloss --end-group -lgcc]
+    arg [/opt/riscv-toolchain/bin/../libexec/gcc/riscv64-unknown-elf/8.2.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/opt/riscv-toolchain/bin/../libexec/gcc/riscv64-unknown-elf/8.2.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/opt/riscv-toolchain/bin/../libexec/gcc/riscv64-unknown-elf/8.2.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccvsQG82.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgloss] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--sysroot=/opt/riscv-toolchain/bin/../riscv64-unknown-elf] ==> ignore
+    arg [-melf64lriscv] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_d778d] ==> ignore
+    arg [-L/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0] ==> dir [/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0]
+    arg [-L/opt/riscv-toolchain/bin/../lib/gcc] ==> dir [/opt/riscv-toolchain/bin/../lib/gcc]
+    arg [-L/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/../../../../riscv64-unknown-elf/lib] ==> dir [/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/../../../../riscv64-unknown-elf/lib]
+    arg [-L/opt/riscv-toolchain/bin/../riscv64-unknown-elf/lib] ==> dir [/opt/riscv-toolchain/bin/../riscv64-unknown-elf/lib]
+    arg [--gc-sections] ==> ignore
+    arg [-static] ==> ignore
+    arg [-EL] ==> ignore
+    arg [--no-relax] ==> ignore
+    arg [CMakeFiles/cmTC_d778d.dir/CMakeCCompilerABI.c.obj] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--start-group] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgloss] ==> lib [gloss]
+    arg [--end-group] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+  collapse library dir [/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0] ==> [/opt/riscv-toolchain/lib/gcc/riscv64-unknown-elf/8.2.0]
+  collapse library dir [/opt/riscv-toolchain/bin/../lib/gcc] ==> [/opt/riscv-toolchain/lib/gcc]
+  collapse library dir [/opt/riscv-toolchain/bin/../lib/gcc/riscv64-unknown-elf/8.2.0/../../../../riscv64-unknown-elf/lib] ==> [/opt/riscv-toolchain/riscv64-unknown-elf/lib]
+  collapse library dir [/opt/riscv-toolchain/bin/../riscv64-unknown-elf/lib] ==> [/opt/riscv-toolchain/riscv64-unknown-elf/lib]
+  implicit libs: [gcc;c;gloss;gcc]
+  implicit objs: []
+  implicit dirs: [/opt/riscv-toolchain/lib/gcc/riscv64-unknown-elf/8.2.0;/opt/riscv-toolchain/lib/gcc;/opt/riscv-toolchain/riscv64-unknown-elf/lib]
+  implicit fwks: []
+
+

@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../port/freertos_risc_v_chip_specific_extensions.h
+
+/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/FreeRTOS-Kernel/portable/GCC/RISC-V/portASM.S
+freertos_risc_v_chip_specific_extensions.h
+/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/FreeRTOS-Kernel/portable/GCC/RISC-V/freertos_risc_v_chip_specific_extensions.h
+
