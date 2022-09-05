@@ -60,7 +60,7 @@ CMakeFiles/kendryte-freertos-project.dir/src/main.c.obj: \
  /opt/riscv-toolchain/riscv64-unknown-elf/include/stdlib.h \
  /opt/riscv-toolchain/riscv64-unknown-elf/include/machine/stdlib.h \
  /opt/riscv-toolchain/riscv64-unknown-elf/include/alloca.h \
- /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/ascon/algorithms/ascon-128/algorithm_selection.h \
+ /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/aes_software/ecb/128/algorithm_selection.h \
  /opt/riscv-toolchain/riscv64-unknown-elf/include/fcntl.h \
  /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/fcntl.h \
  /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_default_fcntl.h \
@@ -72,5 +72,4 @@ CMakeFiles/kendryte-freertos-project.dir/src/main.c.obj: \
  /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/lib/lcd.h \
  /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/lib/nt35310.h \
  /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/lib/board_config.h \
- /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/ascon/ascon-lib/crypto_aead.h \
- /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/ascon/algorithms/ascon-128/api.h
+ /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/aes_software/ecb/128/aes_soft.h

@@ -78,7 +78,6 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 )
 
 elseif(${TYPE} STREQUAL "aes_software")
-message("Entra soft")
 add_executable(${PROJECT_NAME}
 	FreeRTOS-Kernel/tasks.c
 	FreeRTOS-Kernel/queue.c

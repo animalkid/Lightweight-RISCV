@@ -229,22 +229,24 @@ int main() {
 
 int main(){
   
-  char *portname = "/dev/ttyS0";
+  char *portname = "/dev/ttyUSB1";
   int serial_port = open (portname, O_RDWR);
   
   config_uart ();
   
   unsigned char msg[]="Kaixo";
   
-  write(serial_port, msg, sizeof(msg));
+  //write(serial_port, msg, sizeof(msg));
   char buf[100];
   
-  read(serial_port, &buf, sizeof(buf));
+  int n=read(serial_port, &buf, sizeof(buf));
   
   
     //int n = read (serialport, buf, strlen(buf));
-    printf("%s\n", buf);
-  
+  while (1){
+    if (n>0)
+      printf("%s\n", buf);
+  }
   return 1;
   
 }

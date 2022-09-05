@@ -1,33 +1,33 @@
+//Include needed Kendryte SDK libraries.
 #include <fpioa.h>
 #include <gpio.h>
 #include <uarths.h>
 #include <sysctl.h>
-//#include <i2s.h>
 
-
+//Include needed FreeRTOS libraries.
 #include <FreeRTOS.h>
 #include <task.h>
 #include <queue.h>
 
+//Include standard libraries.
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
 #include <stdlib.h>
 
+//Include the library that defines the compiled algorithm.
 #include "algorithm_selection.h"
-
 
 #include <fcntl.h>
 #include <unistd.h>
 
-
-//#include "led.h"
+//Include needed libraries for the LCD use and board configuration library.
 #include "lcd.h"
 #include "nt35310.h"
 #include "board_config.h"
-//#include "image.h"
 
+//Include library that implements the compiled algorithm.
 #if AEAD
 #include "crypto_aead.h"
 #elif HASH
@@ -44,12 +44,14 @@
 #include "sha256.h"
 #endif
 
+//In the case of ASCON algorithms, include the api library.
 #if AEAD || HASH || AUTH
 #include "api.h"
 #endif
 
 #define FRAME_LEN   512
 
+//Define the number of blocks to be ciphered.
 #define BLOCK_NUM 1000
 
 QueueHandle_t queue;
@@ -62,8 +64,6 @@ QueueHandle_t decrypt_time;
 #if AEAD
 unsigned long long clen = CRYPTO_ABYTES;
 unsigned char a[] = "ASCON";
-//unsigned char npub[CRYPTO_NPUBBYTES] = "7683950492347567";
-//unsigned char k[CRYPTO_KEYBYTES] = "4356245245435342";
 unsigned char npub[CRYPTO_NPUBBYTES] = {0};
 unsigned char k[CRYPTO_KEYBYTES] = {0};
 
@@ -118,7 +118,7 @@ unsigned char tag[sizeof(const char)*16];
   #elif CTR
 unsigned char iv[sizeof(const char)*16] = {0};
 
-    #endif
+  #endif
 
   #if !SOFTORHARD
 struct AES_ctx cont;
@@ -141,7 +141,7 @@ unsigned long long mlen=sizeof(const char)*8;
 
 uint32_t g_lcd_gram[LCD_X_MAX * LCD_Y_MAX / 2] __attribute__((aligned(128)));
 
-
+//This Task is the one in charge of the Task execution control
 void ControlTask(void* p)
 {
 	bool state = false;
@@ -154,197 +154,190 @@ void ControlTask(void* p)
 	}
 }
 
-
+//Set the needed power for the LCD
 static void io_set_power(void)
 {
-#if BOARD_LICHEEDAN
     sysctl_set_power_mode(SYSCTL_POWER_BANK6, SYSCTL_POWER_V18);
     sysctl_set_power_mode(SYSCTL_POWER_BANK7, SYSCTL_POWER_V18);
-#else
-    sysctl_set_power_mode(SYSCTL_POWER_BANK1, SYSCTL_POWER_V18);
-#endif
 }
-
+//Initialize the LCD pins
 static void io_mux_init(void)
 {
-#if BOARD_LICHEEDAN
     fpioa_set_function(38, FUNC_GPIOHS0 + DCX_GPIONUM);
     fpioa_set_function(36, FUNC_SPI0_SS3);
     fpioa_set_function(39, FUNC_SPI0_SCLK);
     fpioa_set_function(37, FUNC_GPIOHS0 + RST_GPIONUM);
     sysctl_set_spi0_dvp_data(1);
-#else
-    fpioa_set_function(8, FUNC_GPIOHS0 + DCX_GPIONUM);
-    fpioa_set_function(6, FUNC_SPI0_SS3);
-    fpioa_set_function(7, FUNC_SPI0_SCLK);
-    sysctl_set_spi0_dvp_data(1);
-#endif
 }
 
+//This task is the one in charge of printing the results in the LCD
 void LCDTask(void* p){
 
+//Initialize all LCD pins and power supplies, then initialize the LCD
 	io_mux_init();
 	io_set_power();
 	lcd_init();
 
-#if BOARD_LICHEEDAN
-    	lcd_set_direction(DIR_XY_LRDU);
-#endif
+//Set the direction of the LCD printing
+  lcd_set_direction(DIR_XY_LRDU);
 
-    lcd_clear(RED);
-    lcd_draw_picture(0, 0, 240, 320, g_lcd_gram);
-    lcd_draw_string(16, 0, "         BENCHMARK         ", RED);
+//Clear the LCD and start drawing characters
+  lcd_clear(RED);
+  lcd_draw_picture(0, 0, 240, 320, g_lcd_gram);
+  lcd_draw_string(16, 0, "         BENCHMARK         ", RED);
+
+//Initialize all the variables, the message size depends on the used algorithm
 #if AES
-    unsigned char mes[sizeof(const char)*16];
+  unsigned char mes[sizeof(const char)*16];
 #else
-    unsigned char mes[sizeof(const char)*8];
+  unsigned char mes[sizeof(const char)*8];
 #endif
-	  bool state;
-    int pos=20;
-    TickType_t time;
-    char str[6];
-	  while(true){
-        xQueueReceive(queue, &state, portMAX_DELAY);
-        xQueueReceive(encrypt_time, &time, portMAX_DELAY);
+	bool state;
+  int pos=20;
+  TickType_t time;
+  char str[6];
+	while(true){
+    xQueueReceive(queue, &state, portMAX_DELAY);
+    xQueueReceive(encrypt_time, &time, portMAX_DELAY);
 
-        if(pos>=320){
-            lcd_clear(RED);
-            lcd_draw_picture(0, 0, 240, 320, g_lcd_gram);
-            lcd_draw_string(16, 0, "         BENCHMARK         ", RED);
-            pos=20;
+//If the printing position is higher than the LCD max size, then refresh the LCD and start printing again.
+    if(pos>=320){
+      lcd_clear(RED);
+      lcd_draw_picture(0, 0, 240, 320, g_lcd_gram);
+      lcd_draw_string(16, 0, "         BENCHMARK         ", RED);
+      pos=20;
+    }
+//Print the elapsed encryption time
+    sprintf(str, "%lu", time);
+    lcd_draw_string(16, pos, str, RED);
+    pos+=20;
 
-        }
-
-        sprintf(str, "%lu", time);
-        lcd_draw_string(16, pos, str, RED);
-        pos+=20;
-
+//In the case of AEAD or AES algorithms, also print the elapsed decryption time.
 #if AEAD || AES
-		    xQueueReceive(LCD_queue, &mes, portMAX_DELAY);
-        lcd_draw_string(16, pos, mes, RED);
-        pos+=20;
+		xQueueReceive(LCD_queue, &mes, portMAX_DELAY);
+    lcd_draw_string(16, pos, mes, RED);
+    pos+=20;
 
-        xQueueReceive(decrypt_time, &time, portMAX_DELAY);
-        sprintf(str, "%lu", time);
-        lcd_draw_string(16, pos, str, RED);
-        pos+=20;
+    xQueueReceive(decrypt_time, &time, portMAX_DELAY);
+    sprintf(str, "%lu", time);
+    lcd_draw_string(16, pos, str, RED);
+    pos+=20;
 #endif
-	  }
+  }
 }
 
-
+//This task is the one in charge of delivering the messages that have to be ciphered to the encryption task.
 void crypto_handle(){
-	  bool state;
-    //int len,kant;
-    /*char *senddata="Kaizo\n";
-    uarths_init();
-    uarths_config(115200, UARTHS_STOP_1);
-    uarths_send_data(senddata, sizeof(senddata));*/
-  
-    char *portname = "/dev/ttyUSB0";
-    int fd = open (portname, O_RDWR | O_NOCTTY | O_SYNC);
-    write (fd, "Kaixo\n", 6);
-    printf("Kaixo\n");
+  bool state;
+  //int len,kant;
 
-    while(true){
-        xQueueReceive(queue, &state, portMAX_DELAY);
-          
-        /*
-        len=strlen((const char*)message);
-        kant=len/8;
-        if(len%8!=0){
-            kant+=1;
-        }
-        for (int i=0;i<kant;i++){
-            for (int j=0;j<8;j++){
-                mes[j]=message[j+(i*8)];
-            }
+  while(true){
+    xQueueReceive(queue, &state, portMAX_DELAY);
 
-            xQueueSend(encrypt_queue, &mes, portMAX_DELAY);
-        }*/
+//A possible implementation for message splitting, in order to encrypt long messages dividing them in 8-byte blocks.
+/*
+    len=strlen((const char*)message);
+    kant=len/8;
+    if(len%8!=0){
+      kant+=1;
+    }
+    for (int i=0;i<kant;i++){
+      for (int j=0;j<8;j++){
+        mes[j]=message[j+(i*8)];
+      }
+
+      xQueueSend(encrypt_queue, &mes, portMAX_DELAY);
+    }
+*/
+//Send the message to cipher to the encryption task.
         xQueueSend(encrypt_queue, &message, portMAX_DELAY);
     }
 }
 
+//This task is the one in charge of the message encryption process.
 void encryption(void* p){
 
+//Initialize all needed variables
 #if AEAD
-    struct encryptinfo info;
+  struct encryptinfo info;
 #elif AES
-    unsigned char m[sizeof(const char)*16];
-    unsigned char c[sizeof(const char)*16] __attribute__ ((aligned (16)));
+  unsigned char m[sizeof(const char)*16];
+  unsigned char c[sizeof(const char)*16] __attribute__ ((aligned (16)));
 #else
-    unsigned char m[sizeof(const char)*8];
+  unsigned char m[sizeof(const char)*8];
 #endif
 
-    TickType_t time;
-    while(true){
+  TickType_t time;
+  while(true){
 
 #if AEAD
-        xQueueReceive(encrypt_queue, &info.m, portMAX_DELAY);
+    xQueueReceive(encrypt_queue, &info.m, portMAX_DELAY);
 #else
-        xQueueReceive(encrypt_queue, &m, portMAX_DELAY);
+    xQueueReceive(encrypt_queue, &m, portMAX_DELAY);
 #endif
-
-        time=xTaskGetTickCount();
-        for (int i=0; i<BLOCK_NUM;i++){
+//Get the time before doing the encryption process
+    time=xTaskGetTickCount();
+//Do the encryption process for the specified amount of blocks.
+    for (int i=0; i<BLOCK_NUM;i++){
 
 #if AEAD
-            crypto_aead_encrypt(info.c, &clen, info.m, mlen, a, alen, info.nsec, npub, k);
+      crypto_aead_encrypt(info.c, &clen, info.m, mlen, a, alen, info.nsec, npub, k);
 #elif HASH
-            crypto_hash(h, m, mlen);
+      crypto_hash(h, m, mlen);
 #elif AUTH
-            crypto_auth(t, m, mlen, k);
-            //crypto_auth_verify();
+      crypto_auth(t, m, mlen, k);
+      //crypto_auth_verify();
 #elif AES
   #if ECB
     #if SOFTORHARD
       #if BIT128
-            aes_ecb128_hard_encrypt(k, m, mlen, c);
+      aes_ecb128_hard_encrypt(k, m, mlen, c);
       #elif BIT192
-            aes_ecb192_hard_encrypt(k, m, mlen, c);
+      aes_ecb192_hard_encrypt(k, m, mlen, c);
       #elif BIT256
-            aes_ecb256_hard_encrypt(k, m, mlen, c);
+      aes_ecb256_hard_encrypt(k, m, mlen, c);
       #endif
     #else
-            AES_init_ctx(&cont, k);
-            AES_ECB_encrypt(&cont, m);
+      AES_init_ctx(&cont, k);
+      AES_ECB_encrypt(&cont, m);
     #endif
 
   #elif CBC
     #if SOFTORHARD
       #if BIT128
-            aes_cbc128_hard_encrypt(&cont, m, mlen, c);
+      aes_cbc128_hard_encrypt(&cont, m, mlen, c);
       #elif BIT192
-            aes_cbc192_hard_encrypt(&cont, m, mlen, c);
+      aes_cbc192_hard_encrypt(&cont, m, mlen, c);
       #elif BIT256
-            aes_cbc256_hard_encrypt(&cont, m, mlen, c);
+      aes_cbc256_hard_encrypt(&cont, m, mlen, c);
       #endif
     #else
-            AES_init_ctx_iv(&cont, k, iv);
-            AES_CBC_encrypt_buffer(&cont, m, 16);
+      AES_init_ctx_iv(&cont, k, iv);
+      AES_CBC_encrypt_buffer(&cont, m, 16);
     #endif
 
   #elif GCM
     #if BIT128
-            aes_gcm128_hard_encrypt(&cont, m, mlen, c, tag);
+      aes_gcm128_hard_encrypt(&cont, m, mlen, c, tag);
     #elif BIT192
-            aes_gcm192_hard_encrypt(&cont, m, mlen, c, tag);
+      aes_gcm192_hard_encrypt(&cont, m, mlen, c, tag);
     #elif BIT256
-            aes_gcm256_hard_encrypt(&cont, m, mlen, c, tag);
+      aes_gcm256_hard_encrypt(&cont, m, mlen, c, tag);
     #endif
 
   #elif CTR
-            AES_init_ctx_iv(&cont, k, iv);
-            AES_CTR_xcrypt_buffer(&cont, m, 16);
+      AES_init_ctx_iv(&cont, k, iv);
+      AES_CTR_xcrypt_buffer(&cont, m, 16);
   #endif
 #elif SHA256
-            sha256_hard_calculate(m, mlen, c);
+      sha256_hard_calculate(m, mlen, c);
 #endif
-        }
-        time=xTaskGetTickCount()-time;
+    }
+//Get the time after doing the encryption process and calculate the elapsed time during encryption.
+    time=xTaskGetTickCount()-time;
+//Send the results to the LCD task. In the case of AEAD or AES also send the resulting ciphertext to the decryption task, in order to perform decryption.
 #if AEAD
-        xQueueSend(decrypt_queue, &info, portMAX_DELAY);
+    xQueueSend(decrypt_queue, &info, portMAX_DELAY);
 #elif AES
   #if SOFTORHARD
         xQueueSend(decrypt_queue, &c, portMAX_DELAY);
@@ -356,77 +349,82 @@ void encryption(void* p){
     }
 }
 
-
+//This task is the one in charge of the decryption process. This task is only available for AEAD or AES algorithms.
 #if (AEAD || AES)
 void decryption(void* p){
 
+//Initialize all needed variables
   #if AEAD
-    struct encryptinfo info;
+  struct encryptinfo info;
   #elif AES
-    unsigned char m[sizeof(const char)*16];
-    unsigned char c[sizeof(const char)*16] __attribute__ ((aligned (16)));
-
+  unsigned char m[sizeof(const char)*16];
+  unsigned char c[sizeof(const char)*16] __attribute__ ((aligned (16)));
   #endif
-    TickType_t time;
+
+  TickType_t time;
   int pos=80;
 
-    while(true){
+  while(true){
 
   #if AEAD
-        xQueueReceive(decrypt_queue, &info, portMAX_DELAY);
+    xQueueReceive(decrypt_queue, &info, portMAX_DELAY);
   #elif AES
-        xQueueReceive(decrypt_queue, &c, portMAX_DELAY);
+    xQueueReceive(decrypt_queue, &c, portMAX_DELAY);
   #endif
-        time=xTaskGetTickCount();
-        for (int i=0; i<BLOCK_NUM;i++){
+//Get the time before doing the decryption process.
+    time=xTaskGetTickCount();
+//Do the decryption process for the specified amount of blocks.
+    for (int i=0; i<BLOCK_NUM;i++){
   #if AEAD
-            crypto_aead_decrypt(info.m, &mlen, info.nsec, info.c, clen, a, alen, npub, k);
+      crypto_aead_decrypt(info.m, &mlen, info.nsec, info.c, clen, a, alen, npub, k);
   #elif AES
     #if ECB
       #if SOFTORHARD
         #if BIT128
-            aes_ecb128_hard_decrypt(k, c, mlen, m);
+      aes_ecb128_hard_decrypt(k, c, mlen, m);
         #elif BIT192
-            aes_ecb192_hard_decrypt(k, c, mlen, m);
+      aes_ecb192_hard_decrypt(k, c, mlen, m);
         #elif BIT256
-            aes_ecb256_hard_decrypt(k, c, mlen, m);
+      aes_ecb256_hard_decrypt(k, c, mlen, m);
         #endif
       #else
-            AES_init_ctx(&cont, k);
-            AES_ECB_decrypt(&cont, c);
+      AES_init_ctx(&cont, k);
+      AES_ECB_decrypt(&cont, c);
       #endif
 
     #elif CBC
       #if SOFTORHARD
         #if BIT128
-            aes_cbc128_hard_decrypt(&cont, c, mlen, m);
+      aes_cbc128_hard_decrypt(&cont, c, mlen, m);
         #elif BIT192
-            aes_cbc192_hard_decrypt(&cont, c, mlen, m);
+      aes_cbc192_hard_decrypt(&cont, c, mlen, m);
         #elif BIT256
-            aes_cbc256_hard_decrypt(&cont, c, mlen, m);
+      aes_cbc256_hard_decrypt(&cont, c, mlen, m);
         #endif
       #else
-            AES_init_ctx_iv(&cont, k, iv);
-            AES_CBC_decrypt_buffer(&cont, c, 16);
+      AES_init_ctx_iv(&cont, k, iv);
+      AES_CBC_decrypt_buffer(&cont, c, 16);
       #endif
 
     #elif GCM
       #if BIT128
-            aes_gcm128_hard_decrypt(&cont, c, mlen, m, tag);
+      aes_gcm128_hard_decrypt(&cont, c, mlen, m, tag);
       #elif BIT192
-            aes_gcm192_hard_decrypt(&cont, c, mlen, m, tag);
+      aes_gcm192_hard_decrypt(&cont, c, mlen, m, tag);
       #elif BIT256
-            aes_gcm256_hard_decrypt(&cont, c, mlen, m, tag);
+      aes_gcm256_hard_decrypt(&cont, c, mlen, m, tag);
       #endif
 
     #elif CTR
-            AES_init_ctx_iv(&cont, k, iv);
-            AES_CTR_xcrypt_buffer(&cont, c, 16);
+      AES_init_ctx_iv(&cont, k, iv);
+      AES_CTR_xcrypt_buffer(&cont, c, 16);
 
     #endif
   #endif
-        }
-        time=xTaskGetTickCount()-time;
+    }
+//Get the time after doing the encryption process and calculate the elapsed time during encryption.
+    time=xTaskGetTickCount()-time;
+//Send the results to the LCD task.
   #if AEAD
         xQueueSend(LCD_queue, &info.m, portMAX_DELAY);
   #elif AES
@@ -444,25 +442,27 @@ void decryption(void* p){
 
 int main()
 {
-	  sysctl_pll_set_freq(SYSCTL_PLL0, configCPU_CLOCK_HZ * 2);
-    queue = xQueueCreate( 10, sizeof(bool) );
+//Set the CPU Clock frequency
+	sysctl_pll_set_freq(SYSCTL_PLL0, configCPU_CLOCK_HZ * 2);
+//Initialize all queues. AEAD and AES algorithms also include decryption process related queues.
+  queue = xQueueCreate( 10, sizeof(bool) );
 #if AES
-    encrypt_queue = xQueueCreate( 10, sizeof(const char)*16);
-    LCD_queue = xQueueCreate( 10, sizeof(const char)*16);
-    decrypt_queue = xQueueCreate( 10, sizeof(const char)*16);
-    decrypt_time = xQueueCreate( 10, sizeof(TickType_t));
+  encrypt_queue = xQueueCreate( 10, sizeof(const char)*16);
+  LCD_queue = xQueueCreate( 10, sizeof(const char)*16);
+  decrypt_queue = xQueueCreate( 10, sizeof(const char)*16);
+  decrypt_time = xQueueCreate( 10, sizeof(TickType_t));
 #else
-    encrypt_queue = xQueueCreate( 10, sizeof(const char)*8);
-    LCD_queue = xQueueCreate( 10, sizeof(const char)*8);
+  encrypt_queue = xQueueCreate( 10, sizeof(const char)*8);
+  LCD_queue = xQueueCreate( 10, sizeof(const char)*8);
 #endif
-    encrypt_time = xQueueCreate( 10, sizeof(TickType_t));
+  encrypt_time = xQueueCreate( 10, sizeof(TickType_t));
 
 #if AEAD
-    decrypt_queue = xQueueCreate( 10, sizeof(encryptinfo));
-    decrypt_time = xQueueCreate( 10, sizeof(TickType_t));
+  decrypt_queue = xQueueCreate( 10, sizeof(encryptinfo));
+  decrypt_time = xQueueCreate( 10, sizeof(TickType_t));
 #endif
+//Create all the needed tasks with their respective priority. Only AEAD and AES algorithms include decryption task.
 	  printf("Create tasks...\r\n");
-	  //xTaskCreate(LedTask, "LedTask", 256, queue, 3, NULL);
 	  xTaskCreate(ControlTask, "ControlTask", 256, NULL, 3, NULL);
 	  xTaskCreate(LCDTask, "LCDTask", 256, NULL, 4, NULL);
     xTaskCreate(crypto_handle, "crypto_handle", 256, NULL, 3, NULL);
@@ -470,6 +470,7 @@ int main()
 #if (AEAD || AES)
     xTaskCreate(decryption, "decryption", 256, NULL, 3, NULL);
 #endif
+//Initialize the scheduler.
 	  printf("Start scheduler...\r\n");
 	  vTaskStartScheduler();
 

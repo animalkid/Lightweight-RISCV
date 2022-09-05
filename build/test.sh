@@ -225,11 +225,11 @@ else
 	exit
 fi
 
-#sudo make || exit
+sudo make || exit
 
 gcc -o serialprog ../src/serialmain.c
 
-#kflash -p /dev/ttyUSB0 kendryte-freertos-project.bin || exit
+kflash -p /dev/ttyUSB1 kendryte-freertos-project.bin || exit
 
 sudo chmod +x serialprog
 
