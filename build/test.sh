@@ -227,10 +227,5 @@ fi
 
 sudo make || exit
 
-gcc -o serialprog ../src/serialmain.c
+kflash -p /dev/ttyUSB2 kendryte-freertos-project.bin -t
 
-kflash -p /dev/ttyUSB1 kendryte-freertos-project.bin || exit
-
-sudo chmod +x serialprog
-
-./serialprog

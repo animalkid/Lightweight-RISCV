@@ -22,6 +22,10 @@ CMakeFiles/kendryte-freertos-project.dir/src/main.c.obj: \
  /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/kendryte-standalone-sdk/lib/drivers/include/plic.h \
  /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/kendryte-standalone-sdk/lib/bsp/include/encoding.h \
  /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/kendryte-standalone-sdk/lib/drivers/include/sysctl.h \
+ /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/kendryte-standalone-sdk/lib/drivers/include/uart.h \
+ /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/kendryte-standalone-sdk/lib/drivers/include/dmac.h \
+ /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/kendryte-standalone-sdk/lib/drivers/include/io.h \
+ /opt/riscv-toolchain/lib/gcc/riscv64-unknown-elf/8.2.0/include/stdbool.h \
  /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/FreeRTOS-Kernel/include/FreeRTOS.h \
  /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/port/FreeRTOSConfig.h \
  /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/FreeRTOS-Kernel/include/projdefs.h \
@@ -33,7 +37,6 @@ CMakeFiles/kendryte-freertos-project.dir/src/main.c.obj: \
  /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/FreeRTOS-Kernel/include/list.h \
  /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/FreeRTOS-Kernel/include/queue.h \
  /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/FreeRTOS-Kernel/include/task.h \
- /opt/riscv-toolchain/lib/gcc/riscv64-unknown-elf/8.2.0/include/stdbool.h \
  /opt/riscv-toolchain/riscv64-unknown-elf/include/stdio.h \
  /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/cdefs.h \
  /opt/riscv-toolchain/lib/gcc/riscv64-unknown-elf/8.2.0/include/stdarg.h \
@@ -60,7 +63,7 @@ CMakeFiles/kendryte-freertos-project.dir/src/main.c.obj: \
  /opt/riscv-toolchain/riscv64-unknown-elf/include/stdlib.h \
  /opt/riscv-toolchain/riscv64-unknown-elf/include/machine/stdlib.h \
  /opt/riscv-toolchain/riscv64-unknown-elf/include/alloca.h \
- /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/aes_software/ecb/128/algorithm_selection.h \
+ /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/aes_software/ctr/256/algorithm_selection.h \
  /opt/riscv-toolchain/riscv64-unknown-elf/include/fcntl.h \
  /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/fcntl.h \
  /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_default_fcntl.h \
@@ -72,4 +75,4 @@ CMakeFiles/kendryte-freertos-project.dir/src/main.c.obj: \
  /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/lib/lcd.h \
  /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/lib/nt35310.h \
  /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/lib/board_config.h \
- /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/aes_software/ecb/128/aes_soft.h
+ /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/aes_software/ctr/256/aes_soft.h

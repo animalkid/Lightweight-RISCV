@@ -34,7 +34,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "../kendryte-standalone-sdk/lib/bsp/include"
   "../src"
   "../src/lib"
-  "../src/cypher/aes_software/ecb/128"
+  "../src/cypher/aes_software/ctr/256"
   )
 
 # The set of dependency files which are needed:

@@ -204,7 +204,7 @@ CMakeFiles/kendryte-freertos-project.dir/src/cypher/aes_software/aes_soft.c.obj:
   /opt/riscv-toolchain/riscv64-unknown-elf/include/xlocale.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/strings.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/string.h \
-  ../src/cypher/aes_software/ecb/128/aes_soft.h \
+  ../src/cypher/aes_software/ctr/192/aes_soft.h \
   /opt/riscv-toolchain/lib/gcc/riscv64-unknown-elf/8.2.0/include/stdint.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/stdint.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_intsup.h \
@@ -274,6 +274,10 @@ CMakeFiles/kendryte-freertos-project.dir/src/main.c.obj: ../src/main.c \
   ../kendryte-standalone-sdk/lib/drivers/include/plic.h \
   ../kendryte-standalone-sdk/lib/bsp/include/encoding.h \
   ../kendryte-standalone-sdk/lib/drivers/include/sysctl.h \
+  ../kendryte-standalone-sdk/lib/drivers/include/uart.h \
+  ../kendryte-standalone-sdk/lib/drivers/include/dmac.h \
+  ../kendryte-standalone-sdk/lib/drivers/include/io.h \
+  /opt/riscv-toolchain/lib/gcc/riscv64-unknown-elf/8.2.0/include/stdbool.h \
   ../FreeRTOS-Kernel/include/FreeRTOS.h \
   ../port/FreeRTOSConfig.h \
   ../FreeRTOS-Kernel/include/projdefs.h \
@@ -285,7 +289,6 @@ CMakeFiles/kendryte-freertos-project.dir/src/main.c.obj: ../src/main.c \
   ../FreeRTOS-Kernel/include/list.h \
   ../FreeRTOS-Kernel/include/queue.h \
   ../FreeRTOS-Kernel/include/task.h \
-  /opt/riscv-toolchain/lib/gcc/riscv64-unknown-elf/8.2.0/include/stdbool.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/stdio.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/cdefs.h \
   /opt/riscv-toolchain/lib/gcc/riscv64-unknown-elf/8.2.0/include/stdarg.h \
@@ -312,7 +315,7 @@ CMakeFiles/kendryte-freertos-project.dir/src/main.c.obj: ../src/main.c \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/stdlib.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/machine/stdlib.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/alloca.h \
-  ../src/cypher/aes_software/ecb/128/algorithm_selection.h \
+  ../src/cypher/aes_software/ctr/192/algorithm_selection.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/fcntl.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/fcntl.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_default_fcntl.h \
@@ -324,7 +327,7 @@ CMakeFiles/kendryte-freertos-project.dir/src/main.c.obj: ../src/main.c \
   ../src/lib/lcd.h \
   ../src/lib/nt35310.h \
   ../src/lib/board_config.h \
-  ../src/cypher/aes_software/ecb/128/aes_soft.h
+  ../src/cypher/aes_software/ctr/192/aes_soft.h
 
 CMakeFiles/kendryte-freertos-project.dir/src/nt35310.c.obj: ../src/nt35310.c \
   ../src/lib/nt35310.h \
@@ -369,8 +372,6 @@ CMakeFiles/kendryte-freertos-project.dir/src/nt35310.c.obj: ../src/nt35310.c \
   ../src/lib/board_config.h
 
 
-../kendryte-standalone-sdk/lib/drivers/include/dmac.h:
-
 ../kendryte-standalone-sdk/lib/drivers/include/spi.h:
 
 ../src/nt35310.c:
@@ -381,13 +382,21 @@ CMakeFiles/kendryte-freertos-project.dir/src/nt35310.c.obj: ../src/nt35310.c \
 
 /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_default_fcntl.h:
 
-../src/cypher/aes_software/ecb/128/algorithm_selection.h:
+../src/cypher/aes_software/ctr/192/algorithm_selection.h:
 
 /opt/riscv-toolchain/lib/gcc/riscv64-unknown-elf/8.2.0/include/stdarg.h:
 
 /opt/riscv-toolchain/riscv64-unknown-elf/include/stdio.h:
 
+../kendryte-standalone-sdk/lib/drivers/include/dmac.h:
+
 ../kendryte-standalone-sdk/lib/bsp/include/encoding.h:
+
+../kendryte-standalone-sdk/lib/drivers/include/io.h:
+
+../kendryte-standalone-sdk/lib/drivers/include/uart.h:
+
+../kendryte-standalone-sdk/lib/drivers/include/plic.h:
 
 ../kendryte-standalone-sdk/lib/drivers/include/uarths.h:
 
@@ -523,11 +532,7 @@ CMakeFiles/kendryte-freertos-project.dir/src/nt35310.c.obj: ../src/nt35310.c \
 
 ../src/cypher/aes_software/aes_soft.c:
 
-../kendryte-standalone-sdk/lib/drivers/include/io.h:
-
-../kendryte-standalone-sdk/lib/drivers/include/plic.h:
-
-../src/cypher/aes_software/ecb/128/aes_soft.h:
+/opt/riscv-toolchain/riscv64-unknown-elf/include/machine/_endian.h:
 
 /opt/riscv-toolchain/riscv64-unknown-elf/include/unistd.h:
 
@@ -535,7 +540,7 @@ CMakeFiles/kendryte-freertos-project.dir/src/nt35310.c.obj: ../src/nt35310.c \
 
 /opt/riscv-toolchain/riscv64-unknown-elf/include/machine/endian.h:
 
-/opt/riscv-toolchain/riscv64-unknown-elf/include/machine/_endian.h:
+../src/cypher/aes_software/ctr/192/aes_soft.h:
 
 /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/select.h:
 

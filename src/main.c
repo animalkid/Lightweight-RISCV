@@ -3,6 +3,7 @@
 #include <gpio.h>
 #include <uarths.h>
 #include <sysctl.h>
+#include <uart.h>
 
 //Include needed FreeRTOS libraries.
 #include <FreeRTOS.h>
@@ -53,6 +54,10 @@
 
 //Define the number of blocks to be ciphered.
 #define BLOCK_NUM 1000
+
+//Define the UART number and the BAUDRATE
+#define UART_NUM UART_DEVICE_3
+#define BAUDRATE 115200
 
 QueueHandle_t queue;
 QueueHandle_t encrypt_queue;
@@ -211,17 +216,23 @@ void LCDTask(void* p){
     sprintf(str, "%lu", time);
     lcd_draw_string(16, pos, str, RED);
     pos+=20;
+    strcat(str, "\n");
+    uart_send_data(UART_NUM, str, strlen(str));
 
 //In the case of AEAD or AES algorithms, also print the elapsed decryption time.
 #if AEAD || AES
 		xQueueReceive(LCD_queue, &mes, portMAX_DELAY);
     lcd_draw_string(16, pos, mes, RED);
     pos+=20;
+    //strcat(mes, "\n");
+    //uart_send_data(UART_NUM, mes, strlen(mes));
 
     xQueueReceive(decrypt_time, &time, portMAX_DELAY);
     sprintf(str, "%lu", time);
     lcd_draw_string(16, pos, str, RED);
     pos+=20;
+    strcat(str, "\n###### \n");
+    uart_send_data(UART_NUM, str, strlen(str));
 #endif
   }
 }
@@ -470,6 +481,14 @@ int main()
 #if (AEAD || AES)
     xTaskCreate(decryption, "decryption", 256, NULL, 3, NULL);
 #endif
+
+//Initialize UART pins and initialize and configurate UART.
+    fpioa_set_function(4, FUNC_UART1_RX + UART_NUM * 2);
+    fpioa_set_function(5, FUNC_UART1_TX + UART_NUM * 2);
+
+    uart_init(UART_NUM);
+    uart_config(UART_NUM, BAUDRATE, UART_BITWIDTH_8BIT, UART_STOP_1, UART_PARITY_NONE);
+
 //Initialize the scheduler.
 	  printf("Start scheduler...\r\n");
 	  vTaskStartScheduler();

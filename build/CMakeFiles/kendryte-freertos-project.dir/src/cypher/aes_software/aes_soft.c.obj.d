@@ -18,7 +18,7 @@ CMakeFiles/kendryte-freertos-project.dir/src/cypher/aes_software/aes_soft.c.obj:
  /opt/riscv-toolchain/riscv64-unknown-elf/include/xlocale.h \
  /opt/riscv-toolchain/riscv64-unknown-elf/include/strings.h \
  /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/string.h \
- /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/aes_software/ecb/128/aes_soft.h \
+ /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/aes_software/ctr/256/aes_soft.h \
  /opt/riscv-toolchain/lib/gcc/riscv64-unknown-elf/8.2.0/include/stdint.h \
  /opt/riscv-toolchain/riscv64-unknown-elf/include/stdint.h \
  /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_intsup.h \
