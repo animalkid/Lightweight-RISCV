@@ -294,29 +294,53 @@ port/ExternalInterruptHandler.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kendryte-freertos-project.dir/build.make CMakeFiles/kendryte-freertos-project.dir/port/ExternalInterruptHandler.c.s
 .PHONY : port/ExternalInterruptHandler.c.s
 
-src/cypher/aes_software/aes_soft.obj: src/cypher/aes_software/aes_soft.c.obj
-.PHONY : src/cypher/aes_software/aes_soft.obj
+src/cypher/ascon/algorithms/ascon-prfs/prf.obj: src/cypher/ascon/algorithms/ascon-prfs/prf.c.obj
+.PHONY : src/cypher/ascon/algorithms/ascon-prfs/prf.obj
 
 # target to build an object file
-src/cypher/aes_software/aes_soft.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kendryte-freertos-project.dir/build.make CMakeFiles/kendryte-freertos-project.dir/src/cypher/aes_software/aes_soft.c.obj
-.PHONY : src/cypher/aes_software/aes_soft.c.obj
+src/cypher/ascon/algorithms/ascon-prfs/prf.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kendryte-freertos-project.dir/build.make CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/algorithms/ascon-prfs/prf.c.obj
+.PHONY : src/cypher/ascon/algorithms/ascon-prfs/prf.c.obj
 
-src/cypher/aes_software/aes_soft.i: src/cypher/aes_software/aes_soft.c.i
-.PHONY : src/cypher/aes_software/aes_soft.i
+src/cypher/ascon/algorithms/ascon-prfs/prf.i: src/cypher/ascon/algorithms/ascon-prfs/prf.c.i
+.PHONY : src/cypher/ascon/algorithms/ascon-prfs/prf.i
 
 # target to preprocess a source file
-src/cypher/aes_software/aes_soft.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kendryte-freertos-project.dir/build.make CMakeFiles/kendryte-freertos-project.dir/src/cypher/aes_software/aes_soft.c.i
-.PHONY : src/cypher/aes_software/aes_soft.c.i
+src/cypher/ascon/algorithms/ascon-prfs/prf.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kendryte-freertos-project.dir/build.make CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/algorithms/ascon-prfs/prf.c.i
+.PHONY : src/cypher/ascon/algorithms/ascon-prfs/prf.c.i
 
-src/cypher/aes_software/aes_soft.s: src/cypher/aes_software/aes_soft.c.s
-.PHONY : src/cypher/aes_software/aes_soft.s
+src/cypher/ascon/algorithms/ascon-prfs/prf.s: src/cypher/ascon/algorithms/ascon-prfs/prf.c.s
+.PHONY : src/cypher/ascon/algorithms/ascon-prfs/prf.s
 
 # target to generate assembly for a file
-src/cypher/aes_software/aes_soft.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kendryte-freertos-project.dir/build.make CMakeFiles/kendryte-freertos-project.dir/src/cypher/aes_software/aes_soft.c.s
-.PHONY : src/cypher/aes_software/aes_soft.c.s
+src/cypher/ascon/algorithms/ascon-prfs/prf.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kendryte-freertos-project.dir/build.make CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/algorithms/ascon-prfs/prf.c.s
+.PHONY : src/cypher/ascon/algorithms/ascon-prfs/prf.c.s
+
+src/cypher/ascon/ascon-lib/printstate.obj: src/cypher/ascon/ascon-lib/printstate.c.obj
+.PHONY : src/cypher/ascon/ascon-lib/printstate.obj
+
+# target to build an object file
+src/cypher/ascon/ascon-lib/printstate.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kendryte-freertos-project.dir/build.make CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/ascon-lib/printstate.c.obj
+.PHONY : src/cypher/ascon/ascon-lib/printstate.c.obj
+
+src/cypher/ascon/ascon-lib/printstate.i: src/cypher/ascon/ascon-lib/printstate.c.i
+.PHONY : src/cypher/ascon/ascon-lib/printstate.i
+
+# target to preprocess a source file
+src/cypher/ascon/ascon-lib/printstate.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kendryte-freertos-project.dir/build.make CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/ascon-lib/printstate.c.i
+.PHONY : src/cypher/ascon/ascon-lib/printstate.c.i
+
+src/cypher/ascon/ascon-lib/printstate.s: src/cypher/ascon/ascon-lib/printstate.c.s
+.PHONY : src/cypher/ascon/ascon-lib/printstate.s
+
+# target to generate assembly for a file
+src/cypher/ascon/ascon-lib/printstate.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kendryte-freertos-project.dir/build.make CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/ascon-lib/printstate.c.s
+.PHONY : src/cypher/ascon/ascon-lib/printstate.c.s
 
 src/lcd.obj: src/lcd.c.obj
 .PHONY : src/lcd.obj
@@ -419,9 +443,12 @@ help:
 	@echo "... port/ExternalInterruptHandler.obj"
 	@echo "... port/ExternalInterruptHandler.i"
 	@echo "... port/ExternalInterruptHandler.s"
-	@echo "... src/cypher/aes_software/aes_soft.obj"
-	@echo "... src/cypher/aes_software/aes_soft.i"
-	@echo "... src/cypher/aes_software/aes_soft.s"
+	@echo "... src/cypher/ascon/algorithms/ascon-prfs/prf.obj"
+	@echo "... src/cypher/ascon/algorithms/ascon-prfs/prf.i"
+	@echo "... src/cypher/ascon/algorithms/ascon-prfs/prf.s"
+	@echo "... src/cypher/ascon/ascon-lib/printstate.obj"
+	@echo "... src/cypher/ascon/ascon-lib/printstate.i"
+	@echo "... src/cypher/ascon/ascon-lib/printstate.s"
 	@echo "... src/lcd.obj"
 	@echo "... src/lcd.i"
 	@echo "... src/lcd.s"

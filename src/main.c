@@ -55,6 +55,15 @@
 //Define the number of blocks to be ciphered.
 #define BLOCK_NUM 1000
 
+//Define the block size depending on the algorithm. Only the block size for AEAD, HASH, or AUTH algorithms can be edited.
+#if AES
+#define BLOCK_SIZE 16
+#elif AEAD || HASH || AUTH
+#define BLOCK_SIZE 8
+#else
+#define BLOCK_SIZE 8
+#endif
+
 //Define the UART number and the BAUDRATE
 #define UART_NUM UART_DEVICE_3
 #define BAUDRATE 115200
@@ -76,8 +85,8 @@ unsigned long long alen=sizeof(const char)*5;
 
 struct encryptinfo {
     unsigned char nsec[CRYPTO_NSECBYTES];
-    unsigned char c[sizeof(const char)*8 + CRYPTO_ABYTES];
-    unsigned char m[sizeof(const char)*8];
+    unsigned char c[sizeof(const char)*BLOCK_SIZE + CRYPTO_ABYTES];
+    unsigned char m[sizeof(const char)*BLOCK_SIZE];
     int result;
 }encryptinfo;
 
@@ -135,13 +144,8 @@ unsigned char c[sizeof(const char)*32];
 #endif
 
 
-#if AES
-unsigned char message[sizeof(const char)*16]="1234567890123456";
-unsigned long long mlen=sizeof(const char)*16;
-#else
-unsigned char message[sizeof(const char)*8]="12345678";
-unsigned long long mlen=sizeof(const char)*8;
-#endif
+unsigned char message[sizeof(const char)*BLOCK_SIZE]={0};
+unsigned long long mlen=sizeof(const char)*BLOCK_SIZE;
 
 
 uint32_t g_lcd_gram[LCD_X_MAX * LCD_Y_MAX / 2] __attribute__((aligned(128)));
@@ -192,11 +196,7 @@ void LCDTask(void* p){
   lcd_draw_string(16, 0, "         BENCHMARK         ", RED);
 
 //Initialize all the variables, the message size depends on the used algorithm
-#if AES
-  unsigned char mes[sizeof(const char)*16];
-#else
-  unsigned char mes[sizeof(const char)*8];
-#endif
+  unsigned char mes[sizeof(const char)*BLOCK_SIZE];
 	bool state;
   int pos=20;
   TickType_t time;
@@ -272,10 +272,10 @@ void encryption(void* p){
 #if AEAD
   struct encryptinfo info;
 #elif AES
-  unsigned char m[sizeof(const char)*16];
-  unsigned char c[sizeof(const char)*16] __attribute__ ((aligned (16)));
+  unsigned char m[sizeof(const char)*BLOCK_SIZE];
+  unsigned char c[sizeof(const char)*BLOCK_SIZE] __attribute__ ((aligned (BLOCK_SIZE)));
 #else
-  unsigned char m[sizeof(const char)*8];
+  unsigned char m[sizeof(const char)*BLOCK_SIZE];
 #endif
 
   TickType_t time;
@@ -288,6 +288,7 @@ void encryption(void* p){
 #endif
 //Get the time before doing the encryption process
     time=xTaskGetTickCount();
+
 //Do the encryption process for the specified amount of blocks.
     for (int i=0; i<BLOCK_NUM;i++){
 
@@ -368,12 +369,11 @@ void decryption(void* p){
   #if AEAD
   struct encryptinfo info;
   #elif AES
-  unsigned char m[sizeof(const char)*16];
-  unsigned char c[sizeof(const char)*16] __attribute__ ((aligned (16)));
+  unsigned char m[sizeof(const char)*BLOCK_SIZE];
+  unsigned char c[sizeof(const char)*BLOCK_SIZE] __attribute__ ((aligned (BLOCK_SIZE)));
   #endif
 
   TickType_t time;
-  int pos=80;
 
   while(true){
 
@@ -457,18 +457,14 @@ int main()
 	sysctl_pll_set_freq(SYSCTL_PLL0, configCPU_CLOCK_HZ * 2);
 //Initialize all queues. AEAD and AES algorithms also include decryption process related queues.
   queue = xQueueCreate( 10, sizeof(bool) );
-#if AES
-  encrypt_queue = xQueueCreate( 10, sizeof(const char)*16);
-  LCD_queue = xQueueCreate( 10, sizeof(const char)*16);
-  decrypt_queue = xQueueCreate( 10, sizeof(const char)*16);
-  decrypt_time = xQueueCreate( 10, sizeof(TickType_t));
-#else
-  encrypt_queue = xQueueCreate( 10, sizeof(const char)*8);
-  LCD_queue = xQueueCreate( 10, sizeof(const char)*8);
-#endif
+  encrypt_queue = xQueueCreate( 10, sizeof(const char)*BLOCK_SIZE);
   encrypt_time = xQueueCreate( 10, sizeof(TickType_t));
+  LCD_queue = xQueueCreate( 10, sizeof(const char)*BLOCK_SIZE);
 
-#if AEAD
+#if AES
+  decrypt_queue = xQueueCreate( 10, sizeof(const char)*BLOCK_SIZE);
+  decrypt_time = xQueueCreate( 10, sizeof(TickType_t));
+#elif AEAD
   decrypt_queue = xQueueCreate( 10, sizeof(encryptinfo));
   decrypt_time = xQueueCreate( 10, sizeof(TickType_t));
 #endif

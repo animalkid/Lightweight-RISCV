@@ -34,7 +34,8 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "../kendryte-standalone-sdk/lib/bsp/include"
   "../src"
   "../src/lib"
-  "../src/cypher/aes_software/ctr/256"
+  "../src/cypher/ascon/ascon-lib"
+  "../src/cypher/ascon/algorithms/ascon-prfs"
   )
 
 # The set of dependency files which are needed:
@@ -45,7 +46,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/FreeRTOS-Kernel/queue.c" "CMakeFiles/kendryte-freertos-project.dir/FreeRTOS-Kernel/queue.c.obj" "gcc" "CMakeFiles/kendryte-freertos-project.dir/FreeRTOS-Kernel/queue.c.obj.d"
   "/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/FreeRTOS-Kernel/tasks.c" "CMakeFiles/kendryte-freertos-project.dir/FreeRTOS-Kernel/tasks.c.obj" "gcc" "CMakeFiles/kendryte-freertos-project.dir/FreeRTOS-Kernel/tasks.c.obj.d"
   "/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/port/ExternalInterruptHandler.c" "CMakeFiles/kendryte-freertos-project.dir/port/ExternalInterruptHandler.c.obj" "gcc" "CMakeFiles/kendryte-freertos-project.dir/port/ExternalInterruptHandler.c.obj.d"
-  "/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/aes_software/aes_soft.c" "CMakeFiles/kendryte-freertos-project.dir/src/cypher/aes_software/aes_soft.c.obj" "gcc" "CMakeFiles/kendryte-freertos-project.dir/src/cypher/aes_software/aes_soft.c.obj.d"
+  "/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/ascon/algorithms/ascon-prfs/prf.c" "CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/algorithms/ascon-prfs/prf.c.obj" "gcc" "CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/algorithms/ascon-prfs/prf.c.obj.d"
+  "/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/ascon/ascon-lib/printstate.c" "CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/ascon-lib/printstate.c.obj" "gcc" "CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/ascon-lib/printstate.c.obj.d"
   "/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/lcd.c" "CMakeFiles/kendryte-freertos-project.dir/src/lcd.c.obj" "gcc" "CMakeFiles/kendryte-freertos-project.dir/src/lcd.c.obj.d"
   "/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/main.c" "CMakeFiles/kendryte-freertos-project.dir/src/main.c.obj" "gcc" "CMakeFiles/kendryte-freertos-project.dir/src/main.c.obj.d"
   "/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/nt35310.c" "CMakeFiles/kendryte-freertos-project.dir/src/nt35310.c.obj" "gcc" "CMakeFiles/kendryte-freertos-project.dir/src/nt35310.c.obj.d"

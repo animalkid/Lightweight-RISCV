@@ -185,30 +185,41 @@ CMakeFiles/kendryte-freertos-project.dir/port/ExternalInterruptHandler.c.obj: ..
   /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_stdint.h \
   /opt/riscv-toolchain/lib/gcc/riscv64-unknown-elf/8.2.0/include/stddef.h
 
-CMakeFiles/kendryte-freertos-project.dir/src/cypher/aes_software/aes_soft.c.obj: ../src/cypher/aes_software/aes_soft.c \
+CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/algorithms/ascon-prfs/prf.c.obj: ../src/cypher/ascon/algorithms/ascon-prfs/prf.c \
+  ../src/cypher/ascon/algorithms/ascon-prfs/api.h \
+  ../src/cypher/ascon/ascon-lib/ascon.h \
+  /opt/riscv-toolchain/lib/gcc/riscv64-unknown-elf/8.2.0/include/stdint.h \
+  /opt/riscv-toolchain/riscv64-unknown-elf/include/stdint.h \
+  /opt/riscv-toolchain/riscv64-unknown-elf/include/machine/_default_types.h \
+  /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/features.h \
+  /opt/riscv-toolchain/riscv64-unknown-elf/include/_newlib_version.h \
+  /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_intsup.h \
+  /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_stdint.h \
+  ../src/cypher/ascon/ascon-lib/crypto_auth.h \
+  ../src/cypher/ascon/ascon-lib/permutations.h \
+  ../src/cypher/ascon/ascon-lib/ascon.h \
+  ../src/cypher/ascon/ascon-lib/constants.h \
+  ../src/cypher/ascon/ascon-lib/printstate.h \
+  ../src/cypher/ascon/ascon-lib/round.h \
+  ../src/cypher/ascon/ascon-lib/printstate.h \
+  ../src/cypher/ascon/ascon-lib/word.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/string.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/_ansi.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/newlib.h \
-  /opt/riscv-toolchain/riscv64-unknown-elf/include/_newlib_version.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/config.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/machine/ieeefp.h \
-  /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/features.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/reent.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/_ansi.h \
   /opt/riscv-toolchain/lib/gcc/riscv64-unknown-elf/8.2.0/include/stddef.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_types.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/machine/_types.h \
-  /opt/riscv-toolchain/riscv64-unknown-elf/include/machine/_default_types.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/lock.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/cdefs.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/xlocale.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/strings.h \
-  /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/string.h \
-  ../src/cypher/aes_software/ctr/192/aes_soft.h \
-  /opt/riscv-toolchain/lib/gcc/riscv64-unknown-elf/8.2.0/include/stdint.h \
-  /opt/riscv-toolchain/riscv64-unknown-elf/include/stdint.h \
-  /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_intsup.h \
-  /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_stdint.h
+  /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/string.h
+
+CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/ascon-lib/printstate.c.obj: ../src/cypher/ascon/ascon-lib/printstate.c
 
 CMakeFiles/kendryte-freertos-project.dir/src/lcd.c.obj: ../src/lcd.c \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/string.h \
@@ -315,7 +326,7 @@ CMakeFiles/kendryte-freertos-project.dir/src/main.c.obj: ../src/main.c \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/stdlib.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/machine/stdlib.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/alloca.h \
-  ../src/cypher/aes_software/ctr/192/algorithm_selection.h \
+  ../src/cypher/ascon/algorithms/ascon-prfs/algorithm_selection.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/fcntl.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/fcntl.h \
   /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_default_fcntl.h \
@@ -327,7 +338,8 @@ CMakeFiles/kendryte-freertos-project.dir/src/main.c.obj: ../src/main.c \
   ../src/lib/lcd.h \
   ../src/lib/nt35310.h \
   ../src/lib/board_config.h \
-  ../src/cypher/aes_software/ctr/192/aes_soft.h
+  ../src/cypher/ascon/ascon-lib/crypto_auth.h \
+  ../src/cypher/ascon/algorithms/ascon-prfs/api.h
 
 CMakeFiles/kendryte-freertos-project.dir/src/nt35310.c.obj: ../src/nt35310.c \
   ../src/lib/nt35310.h \
@@ -382,8 +394,6 @@ CMakeFiles/kendryte-freertos-project.dir/src/nt35310.c.obj: ../src/nt35310.c \
 
 /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_default_fcntl.h:
 
-../src/cypher/aes_software/ctr/192/algorithm_selection.h:
-
 /opt/riscv-toolchain/lib/gcc/riscv64-unknown-elf/8.2.0/include/stdarg.h:
 
 /opt/riscv-toolchain/riscv64-unknown-elf/include/stdio.h:
@@ -398,10 +408,6 @@ CMakeFiles/kendryte-freertos-project.dir/src/nt35310.c.obj: ../src/nt35310.c \
 
 ../kendryte-standalone-sdk/lib/drivers/include/plic.h:
 
-../kendryte-standalone-sdk/lib/drivers/include/uarths.h:
-
-../kendryte-standalone-sdk/lib/drivers/include/gpio_common.h:
-
 /opt/riscv-toolchain/riscv64-unknown-elf/include/inttypes.h:
 
 /opt/riscv-toolchain/riscv64-unknown-elf/include/fcntl.h:
@@ -410,7 +416,17 @@ CMakeFiles/kendryte-freertos-project.dir/src/nt35310.c.obj: ../src/nt35310.c \
 
 ../src/main.c:
 
-../src/lib/nt35310.h:
+/opt/riscv-toolchain/riscv64-unknown-elf/include/machine/types.h:
+
+/opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_pthreadtypes.h:
+
+/opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_timespec.h:
+
+/opt/riscv-toolchain/riscv64-unknown-elf/include/sys/timespec.h:
+
+../kendryte-standalone-sdk/lib/bsp/include/platform.h:
+
+/opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_sigset.h:
 
 ../kendryte-standalone-sdk/lib/drivers/include/fpioa.h:
 
@@ -426,6 +442,10 @@ CMakeFiles/kendryte-freertos-project.dir/src/nt35310.c.obj: ../src/nt35310.c \
 
 ../port/FreeRTOSConfig.h:
 
+/opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_timeval.h:
+
+/opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_stdint.h:
+
 ../FreeRTOS-Kernel/include/FreeRTOS.h:
 
 /opt/riscv-toolchain/lib/gcc/riscv64-unknown-elf/8.2.0/include/stdint.h:
@@ -440,11 +460,23 @@ CMakeFiles/kendryte-freertos-project.dir/src/nt35310.c.obj: ../src/nt35310.c \
 
 /opt/riscv-toolchain/riscv64-unknown-elf/include/machine/ieeefp.h:
 
+../src/lib/lcd.h:
+
+../FreeRTOS-Kernel/queue.c:
+
+../kendryte-standalone-sdk/lib/drivers/include/gpio_common.h:
+
+../src/cypher/ascon/ascon-lib/round.h:
+
 ../src/lcd.c:
 
 /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_types.h:
 
 /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/lock.h:
+
+../kendryte-standalone-sdk/lib/drivers/include/uarths.h:
+
+../src/cypher/ascon/ascon-lib/permutations.h:
 
 ../FreeRTOS-Kernel/include/mpu_wrappers.h:
 
@@ -464,19 +496,11 @@ CMakeFiles/kendryte-freertos-project.dir/src/nt35310.c.obj: ../src/nt35310.c \
 
 /opt/riscv-toolchain/riscv64-unknown-elf/include/alloca.h:
 
-../FreeRTOS-Kernel/queue.c:
-
-../src/lib/lcd.h:
-
 /opt/riscv-toolchain/riscv64-unknown-elf/include/machine/_default_types.h:
 
 /opt/riscv-toolchain/riscv64-unknown-elf/include/_ansi.h:
 
 /opt/riscv-toolchain/riscv64-unknown-elf/include/stdint.h:
-
-/opt/riscv-toolchain/riscv64-unknown-elf/include/sys/timespec.h:
-
-/opt/riscv-toolchain/riscv64-unknown-elf/include/machine/types.h:
 
 /opt/riscv-toolchain/riscv64-unknown-elf/include/_newlib_version.h:
 
@@ -488,13 +512,15 @@ CMakeFiles/kendryte-freertos-project.dir/src/nt35310.c.obj: ../src/nt35310.c \
 
 /opt/riscv-toolchain/riscv64-unknown-elf/include/machine/time.h:
 
+../src/cypher/ascon/algorithms/ascon-prfs/algorithm_selection.h:
+
 /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/reent.h:
 
+../src/lib/nt35310.h:
+
+../src/cypher/ascon/ascon-lib/ascon.h:
+
 /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/features.h:
-
-/opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_stdint.h:
-
-/opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_timeval.h:
 
 ../FreeRTOS-Kernel/portable/GCC/RISC-V/port.c:
 
@@ -508,6 +534,8 @@ CMakeFiles/kendryte-freertos-project.dir/src/nt35310.c.obj: ../src/nt35310.c \
 
 /opt/riscv-toolchain/riscv64-unknown-elf/include/xlocale.h:
 
+../src/cypher/ascon/algorithms/ascon-prfs/api.h:
+
 /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/sched.h:
 
 /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/unistd.h:
@@ -515,8 +543,6 @@ CMakeFiles/kendryte-freertos-project.dir/src/nt35310.c.obj: ../src/nt35310.c \
 /opt/riscv-toolchain/riscv64-unknown-elf/include/strings.h:
 
 ../FreeRTOS-Kernel/portable/MemMang/heap_4.c:
-
-/opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_timespec.h:
 
 ../kendryte-standalone-sdk/lib/drivers/include/sysctl.h:
 
@@ -530,9 +556,19 @@ CMakeFiles/kendryte-freertos-project.dir/src/nt35310.c.obj: ../src/nt35310.c \
 
 ../port/ExternalInterruptHandler.c:
 
-../src/cypher/aes_software/aes_soft.c:
+../src/cypher/ascon/algorithms/ascon-prfs/prf.c:
+
+../src/cypher/ascon/ascon-lib/crypto_auth.h:
+
+../src/cypher/ascon/ascon-lib/printstate.h:
+
+../src/cypher/ascon/ascon-lib/word.h:
+
+../src/cypher/ascon/ascon-lib/constants.h:
 
 /opt/riscv-toolchain/riscv64-unknown-elf/include/machine/_endian.h:
+
+../src/cypher/ascon/ascon-lib/printstate.c:
 
 /opt/riscv-toolchain/riscv64-unknown-elf/include/unistd.h:
 
@@ -540,12 +576,4 @@ CMakeFiles/kendryte-freertos-project.dir/src/nt35310.c.obj: ../src/nt35310.c \
 
 /opt/riscv-toolchain/riscv64-unknown-elf/include/machine/endian.h:
 
-../src/cypher/aes_software/ctr/192/aes_soft.h:
-
 /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/select.h:
-
-../kendryte-standalone-sdk/lib/bsp/include/platform.h:
-
-/opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_sigset.h:
-
-/opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_pthreadtypes.h:

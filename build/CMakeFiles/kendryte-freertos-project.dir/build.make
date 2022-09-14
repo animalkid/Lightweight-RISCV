@@ -208,19 +208,33 @@ CMakeFiles/kendryte-freertos-project.dir/src/nt35310.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kendryte-freertos-project.dir/src/nt35310.c.s"
 	/opt/riscv-toolchain/bin/riscv64-unknown-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/nt35310.c -o CMakeFiles/kendryte-freertos-project.dir/src/nt35310.c.s
 
-CMakeFiles/kendryte-freertos-project.dir/src/cypher/aes_software/aes_soft.c.obj: CMakeFiles/kendryte-freertos-project.dir/flags.make
-CMakeFiles/kendryte-freertos-project.dir/src/cypher/aes_software/aes_soft.c.obj: ../src/cypher/aes_software/aes_soft.c
-CMakeFiles/kendryte-freertos-project.dir/src/cypher/aes_software/aes_soft.c.obj: CMakeFiles/kendryte-freertos-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/kendryte-freertos-project.dir/src/cypher/aes_software/aes_soft.c.obj"
-	/opt/riscv-toolchain/bin/riscv64-unknown-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/kendryte-freertos-project.dir/src/cypher/aes_software/aes_soft.c.obj -MF CMakeFiles/kendryte-freertos-project.dir/src/cypher/aes_software/aes_soft.c.obj.d -o CMakeFiles/kendryte-freertos-project.dir/src/cypher/aes_software/aes_soft.c.obj -c /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/aes_software/aes_soft.c
+CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/ascon-lib/printstate.c.obj: CMakeFiles/kendryte-freertos-project.dir/flags.make
+CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/ascon-lib/printstate.c.obj: ../src/cypher/ascon/ascon-lib/printstate.c
+CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/ascon-lib/printstate.c.obj: CMakeFiles/kendryte-freertos-project.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/ascon-lib/printstate.c.obj"
+	/opt/riscv-toolchain/bin/riscv64-unknown-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/ascon-lib/printstate.c.obj -MF CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/ascon-lib/printstate.c.obj.d -o CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/ascon-lib/printstate.c.obj -c /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/ascon/ascon-lib/printstate.c
 
-CMakeFiles/kendryte-freertos-project.dir/src/cypher/aes_software/aes_soft.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/kendryte-freertos-project.dir/src/cypher/aes_software/aes_soft.c.i"
-	/opt/riscv-toolchain/bin/riscv64-unknown-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/aes_software/aes_soft.c > CMakeFiles/kendryte-freertos-project.dir/src/cypher/aes_software/aes_soft.c.i
+CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/ascon-lib/printstate.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/ascon-lib/printstate.c.i"
+	/opt/riscv-toolchain/bin/riscv64-unknown-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/ascon/ascon-lib/printstate.c > CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/ascon-lib/printstate.c.i
 
-CMakeFiles/kendryte-freertos-project.dir/src/cypher/aes_software/aes_soft.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kendryte-freertos-project.dir/src/cypher/aes_software/aes_soft.c.s"
-	/opt/riscv-toolchain/bin/riscv64-unknown-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/aes_software/aes_soft.c -o CMakeFiles/kendryte-freertos-project.dir/src/cypher/aes_software/aes_soft.c.s
+CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/ascon-lib/printstate.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/ascon-lib/printstate.c.s"
+	/opt/riscv-toolchain/bin/riscv64-unknown-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/ascon/ascon-lib/printstate.c -o CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/ascon-lib/printstate.c.s
+
+CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/algorithms/ascon-prfs/prf.c.obj: CMakeFiles/kendryte-freertos-project.dir/flags.make
+CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/algorithms/ascon-prfs/prf.c.obj: ../src/cypher/ascon/algorithms/ascon-prfs/prf.c
+CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/algorithms/ascon-prfs/prf.c.obj: CMakeFiles/kendryte-freertos-project.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/algorithms/ascon-prfs/prf.c.obj"
+	/opt/riscv-toolchain/bin/riscv64-unknown-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/algorithms/ascon-prfs/prf.c.obj -MF CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/algorithms/ascon-prfs/prf.c.obj.d -o CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/algorithms/ascon-prfs/prf.c.obj -c /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/ascon/algorithms/ascon-prfs/prf.c
+
+CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/algorithms/ascon-prfs/prf.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/algorithms/ascon-prfs/prf.c.i"
+	/opt/riscv-toolchain/bin/riscv64-unknown-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/ascon/algorithms/ascon-prfs/prf.c > CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/algorithms/ascon-prfs/prf.c.i
+
+CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/algorithms/ascon-prfs/prf.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/algorithms/ascon-prfs/prf.c.s"
+	/opt/riscv-toolchain/bin/riscv64-unknown-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/ascon/algorithms/ascon-prfs/prf.c -o CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/algorithms/ascon-prfs/prf.c.s
 
 # Object files for target kendryte-freertos-project
 kendryte__freertos__project_OBJECTS = \
@@ -234,7 +248,8 @@ kendryte__freertos__project_OBJECTS = \
 "CMakeFiles/kendryte-freertos-project.dir/src/main.c.obj" \
 "CMakeFiles/kendryte-freertos-project.dir/src/lcd.c.obj" \
 "CMakeFiles/kendryte-freertos-project.dir/src/nt35310.c.obj" \
-"CMakeFiles/kendryte-freertos-project.dir/src/cypher/aes_software/aes_soft.c.obj"
+"CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/ascon-lib/printstate.c.obj" \
+"CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/algorithms/ascon-prfs/prf.c.obj"
 
 # External object files for target kendryte-freertos-project
 kendryte__freertos__project_EXTERNAL_OBJECTS =
@@ -249,11 +264,12 @@ kendryte-freertos-project.elf: CMakeFiles/kendryte-freertos-project.dir/port/Ext
 kendryte-freertos-project.elf: CMakeFiles/kendryte-freertos-project.dir/src/main.c.obj
 kendryte-freertos-project.elf: CMakeFiles/kendryte-freertos-project.dir/src/lcd.c.obj
 kendryte-freertos-project.elf: CMakeFiles/kendryte-freertos-project.dir/src/nt35310.c.obj
-kendryte-freertos-project.elf: CMakeFiles/kendryte-freertos-project.dir/src/cypher/aes_software/aes_soft.c.obj
+kendryte-freertos-project.elf: CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/ascon-lib/printstate.c.obj
+kendryte-freertos-project.elf: CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/algorithms/ascon-prfs/prf.c.obj
 kendryte-freertos-project.elf: CMakeFiles/kendryte-freertos-project.dir/build.make
 kendryte-freertos-project.elf: kendryte-standalone-sdk/lib/libkendryte.a
 kendryte-freertos-project.elf: CMakeFiles/kendryte-freertos-project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking C executable kendryte-freertos-project.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking C executable kendryte-freertos-project.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/kendryte-freertos-project.dir/link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating .bin file"
 	/opt/riscv-toolchain/bin/riscv64-unknown-elf-objcopy --output-format=binary /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/build/kendryte-freertos-project.elf /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/build/kendryte-freertos-project.bin

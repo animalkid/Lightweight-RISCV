@@ -191,31 +191,43 @@ CMakeFiles/kendryte-freertos-project.dir/port/ExternalInterruptHandler.c.obj
  /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_stdint.h
  /opt/riscv-toolchain/lib/gcc/riscv64-unknown-elf/8.2.0/include/stddef.h
 
-CMakeFiles/kendryte-freertos-project.dir/src/cypher/aes_software/aes_soft.c.obj
- /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/aes_software/aes_soft.c
+CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/algorithms/ascon-prfs/prf.c.obj
+ /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/ascon/algorithms/ascon-prfs/prf.c
+ /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/ascon/algorithms/ascon-prfs/api.h
+ /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/ascon/ascon-lib/ascon.h
+ /opt/riscv-toolchain/lib/gcc/riscv64-unknown-elf/8.2.0/include/stdint.h
+ /opt/riscv-toolchain/riscv64-unknown-elf/include/stdint.h
+ /opt/riscv-toolchain/riscv64-unknown-elf/include/machine/_default_types.h
+ /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/features.h
+ /opt/riscv-toolchain/riscv64-unknown-elf/include/_newlib_version.h
+ /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_intsup.h
+ /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_stdint.h
+ /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/ascon/ascon-lib/crypto_auth.h
+ /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/ascon/ascon-lib/permutations.h
+ /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/ascon/ascon-lib/ascon.h
+ /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/ascon/ascon-lib/constants.h
+ /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/ascon/ascon-lib/printstate.h
+ /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/ascon/ascon-lib/round.h
+ /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/ascon/ascon-lib/printstate.h
+ /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/ascon/ascon-lib/word.h
  /opt/riscv-toolchain/riscv64-unknown-elf/include/string.h
  /opt/riscv-toolchain/riscv64-unknown-elf/include/_ansi.h
  /opt/riscv-toolchain/riscv64-unknown-elf/include/newlib.h
- /opt/riscv-toolchain/riscv64-unknown-elf/include/_newlib_version.h
  /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/config.h
  /opt/riscv-toolchain/riscv64-unknown-elf/include/machine/ieeefp.h
- /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/features.h
  /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/reent.h
  /opt/riscv-toolchain/riscv64-unknown-elf/include/_ansi.h
  /opt/riscv-toolchain/lib/gcc/riscv64-unknown-elf/8.2.0/include/stddef.h
  /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_types.h
  /opt/riscv-toolchain/riscv64-unknown-elf/include/machine/_types.h
- /opt/riscv-toolchain/riscv64-unknown-elf/include/machine/_default_types.h
  /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/lock.h
  /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/cdefs.h
  /opt/riscv-toolchain/riscv64-unknown-elf/include/xlocale.h
  /opt/riscv-toolchain/riscv64-unknown-elf/include/strings.h
  /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/string.h
- /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/aes_software/ctr/192/aes_soft.h
- /opt/riscv-toolchain/lib/gcc/riscv64-unknown-elf/8.2.0/include/stdint.h
- /opt/riscv-toolchain/riscv64-unknown-elf/include/stdint.h
- /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_intsup.h
- /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_stdint.h
+
+CMakeFiles/kendryte-freertos-project.dir/src/cypher/ascon/ascon-lib/printstate.c.obj
+ /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/ascon/ascon-lib/printstate.c
 
 CMakeFiles/kendryte-freertos-project.dir/src/lcd.c.obj
  /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/lcd.c
@@ -324,7 +336,7 @@ CMakeFiles/kendryte-freertos-project.dir/src/main.c.obj
  /opt/riscv-toolchain/riscv64-unknown-elf/include/stdlib.h
  /opt/riscv-toolchain/riscv64-unknown-elf/include/machine/stdlib.h
  /opt/riscv-toolchain/riscv64-unknown-elf/include/alloca.h
- /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/aes_software/ctr/192/algorithm_selection.h
+ /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/ascon/algorithms/ascon-prfs/algorithm_selection.h
  /opt/riscv-toolchain/riscv64-unknown-elf/include/fcntl.h
  /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/fcntl.h
  /opt/riscv-toolchain/riscv64-unknown-elf/include/sys/_default_fcntl.h
@@ -336,7 +348,8 @@ CMakeFiles/kendryte-freertos-project.dir/src/main.c.obj
  /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/lib/lcd.h
  /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/lib/nt35310.h
  /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/lib/board_config.h
- /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/aes_software/ctr/192/aes_soft.h
+ /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/ascon/ascon-lib/crypto_auth.h
+ /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/cypher/ascon/algorithms/ascon-prfs/api.h
 
 CMakeFiles/kendryte-freertos-project.dir/src/nt35310.c.obj
  /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/src/nt35310.c

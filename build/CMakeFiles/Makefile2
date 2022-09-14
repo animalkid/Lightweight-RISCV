@@ -98,12 +98,12 @@ kendryte-standalone-sdk/lib/clean: kendryte-standalone-sdk/lib/CMakeFiles/kendry
 CMakeFiles/kendryte-freertos-project.dir/all: kendryte-standalone-sdk/lib/CMakeFiles/kendryte.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kendryte-freertos-project.dir/build.make CMakeFiles/kendryte-freertos-project.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kendryte-freertos-project.dir/build.make CMakeFiles/kendryte-freertos-project.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/build/CMakeFiles --progress-num=33,34,35,36,37,38,39,40,41,42,43,44 "Built target kendryte-freertos-project"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tusmus/Documentos/TFG_True/kendryte-freertos-project/build/CMakeFiles --progress-num=33,34,35,36,37,38,39,40,41,42,43,44,45 "Built target kendryte-freertos-project"
 .PHONY : CMakeFiles/kendryte-freertos-project.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/kendryte-freertos-project.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/build/CMakeFiles 44
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/build/CMakeFiles 45
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/kendryte-freertos-project.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/tusmus/Documentos/TFG_True/kendryte-freertos-project/build/CMakeFiles 0
 .PHONY : CMakeFiles/kendryte-freertos-project.dir/rule
